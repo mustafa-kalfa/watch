@@ -24,7 +24,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 .double-dot {
@@ -37,18 +37,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
-.transition-class {
-    animation: rotate .5s;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotateX(0deg);
-    }
-    to {
-        transform: rotateX(360deg);
-    }
+.rotate180 {
+    transition: transform 1s;
+    transform: rotateX(360deg);
 }
