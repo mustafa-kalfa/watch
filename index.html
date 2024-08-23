@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="saat" class="merhaba"></div>
+    <div id="dakika"></div>
+    <div id="saniye"></div>
+
+    <script>
+
+        setInterval(function () {
+            var date = new Date();
+            document.getElementById("saat").innerHTML = date.getHours();
+            document.getElementById("dakika").innerHTML = date.getMinutes();
+            document.getElementById("saniye").innerHTML = date.getSeconds();
+        }, 1000);
+
+        $("#saat").removeAttr("class");
+
+
+
+        
+    </script>
+</body>
+</html>
