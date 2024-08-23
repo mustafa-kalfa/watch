@@ -4,27 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="saat" class="merhaba"></div>
-    <div id="dakika"></div>
-    <div id="saniye"></div>
+    <div class="hour watch"></div>
+    <div class="double-dot">:</div>
+    <div class="minute watch"></div>
+    <div class="double-dot">:</div>
+    <div class="second watch"></div>
 
     <script>
-
-        setInterval(function () {
+        $(function(){
             var date = new Date();
-            document.getElementById("saat").innerHTML = date.getHours();
-            document.getElementById("dakika").innerHTML = date.getMinutes();
-            document.getElementById("saniye").innerHTML = date.getSeconds();
-        }, 1000);
+            $(".second").html(date.getSeconds());
+            $(".minute").html(date.getMinutes());
+            $(".hour").html(date.getHours());
 
-        $("#saat").removeAttr("class");
+            var second = $(".second").html();
+            var minute = $(".minute").html();
+            var hour = $(".hour").html();
 
+            setInterval(function () {
+                $(".second").removeClass("transition-class");
+                $(".minute").removeClass("transition-class");
+                $(".hour").removeClass("transition-class");
 
+                var date = new Date();
+                $(".second").html(date.getSeconds());
+                $(".minute").html(date.getMinutes());
+                $(".hour").html(date.getHours());
 
-        
+                console.log(minute);
+                console.log($(".minute").html());
+
+                if (second != $(".second").html()) {
+                    $(".second").addClass("transition-class");
+                    second = $(".second").html();
+                }
+                if (minute != $(".minute").html()) {
+                    $(".minute").addClass("transition-class");
+                    minute = $(".minute").html();
+                }
+                if (hour != $(".hour").html()) {
+                    $(".hour").addClass("transition-class");
+                    hour = $(".hour").html();
+                }
+
+            }, 500);
+        });
     </script>
 </body>
 </html>

@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body {
+    background-color: #008F8C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 200px;
+    gap: 25px;
+}
+
+.watch {
+    width: 200px;
+    height: 200px;
+    background-color: #015958;
+    color: #FFFFFF;
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.double-dot {
+    width: 30px;
+    height: 125px;
+    padding-bottom: 30px;
+    background-color: #015958;
+    color: #FFFFFF;
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.transition-class {
+    animation: rotate .5s;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(360deg);
+    }
+}
